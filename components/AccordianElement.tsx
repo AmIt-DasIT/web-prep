@@ -22,7 +22,7 @@ export default function AccordianElement({
   const toggleCondition = enable ? show : id === data.id;
 
   return (
-    <div className="bg-amber-100 text-amber-950 p-3 rounded w-[330px]">
+    <div className="bg-amber-100 text-amber-800 p-3 rounded w-[330px]">
       <div
         onClick={() =>
           enable
