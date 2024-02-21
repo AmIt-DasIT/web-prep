@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "title": "First accordian",
+      "description": "This is the description of the first accordian"
+    },
+    {
+      "id": 2,
+      "title": "Second accordian",
+      "description": "This is the description of the second accordian"
+    },
+    {
+      "id": 3,
+      "title": "Third accordian",
+      "description": "This is the description of the third accordian"
+    }
+  ]
+}
