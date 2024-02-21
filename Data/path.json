@@ -1,0 +1,15 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Accordian",
+            "path": "accordian"
+        },
+        {
+            "id": 2,
+            "name": "Random Color Generator",
+            "path": "random-color-generator"
+        }
+
+    ]
+}

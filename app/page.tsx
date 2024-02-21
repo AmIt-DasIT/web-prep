@@ -1,11 +1,5 @@
-import Accordian from "@/components/Accordian/Accordian";
-import RandomColorGenerator from "@/components/RandomColorGenerator/RandomColorGenerator";
+import DrawerMenu from "@/components/Menu/DrawerMenu";
 
 export default function Home() {
-  return (
-    <div>
-      {/* <Accordian /> */}
-      <RandomColorGenerator />
-    </div>
-  );
+  return <DrawerMenu />;
 }
