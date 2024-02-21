@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import accordian from "../Data/accordian.json";
+import accordian from "../../Data/accordian.json";
 import AccordianElement from "./AccordianElement";
 
 export default function Accordian() {
@@ -15,7 +15,7 @@ export default function Accordian() {
           setEnable(!enable);
           setId(0);
         }}
-        className="cursor-pointer border p-2 rounded border-amber-900 text-amber-600 w-[150px] text-center"
+        className="cursor-pointer border p-2 rounded border-amber-900 text-amber-700 font-medium w-[150px] text-center"
       >
         {enable ? "Disable" : "Enable"} Multiple
       </div>

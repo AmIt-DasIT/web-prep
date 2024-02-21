@@ -22,7 +22,7 @@ export default function AccordianElement({
   const toggleCondition = enable ? show : id === data.id;
 
   return (
-    <div className="bg-amber-100 text-amber-800 p-3 rounded w-[330px]">
+    <div className="bg-amber-100 text-amber-800 p-3 rounded-md w-[330px] transition-shadow duration-750">
       <div
         onClick={() =>
           enable
@@ -31,11 +31,11 @@ export default function AccordianElement({
         }
         className="flex justify-between cursor-pointer"
       >
-        <div className="text-lg font-medium">{data.title}</div>
-        <div className="text-xl">{toggleCondition ? "-" : "+"}</div>
+        <div className="text-lg">{data.title}</div>
+        <div className="text-2xl">{toggleCondition ? "-" : "+"}</div>
       </div>
       {toggleCondition && (
-        <div className="text-[#333] transition duration-750">
+        <div className="text-[#333]">
           {data.description}
         </div>
       )}
