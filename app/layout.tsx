@@ -5,8 +5,8 @@ import "./globals.css";
 const montserrat = Outfit({subsets: ["latin"]})
 
 export const metadata: Metadata = {
-  title: "Color Picker",
-  description: "color picker",
+  title: "Web-Prep",
+  description: "Web-Prep",
 };
 
 export default function RootLayout({

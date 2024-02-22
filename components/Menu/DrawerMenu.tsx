@@ -10,18 +10,29 @@ import ModalClose from "@mui/joy/ModalClose";
 import Menu from "@mui/icons-material/Menu";
 import Search from "@mui/icons-material/Search";
 import path from "../../Data/path.json";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { HomeRounded } from "@mui/icons-material";
 
 export default function DrawerMenu() {
   const [open, setOpen] = useState(false);
   const [title, setTitle] = useState("");
 
   useEffect(() => {
-    const getTitle = localStorage.getItem("title");
+    console.log(location.pathname);
+    const getTitle =
+      location.pathname === "/" ? "Web-Prep" : localStorage.getItem("title");
     if (!getTitle) return;
     document.title = getTitle;
   }, [title]);
+
+  const [formData, setFormData] = useState({ searchData: "" });
+
+  const searchData = useMemo(() => {
+    return path.data.filter((data) =>
+      data.name.toLowerCase().includes(formData.searchData),
+    );
+  }, [formData]);
 
   return (
     <>
@@ -38,21 +49,26 @@ export default function DrawerMenu() {
             display: "flex",
             alignItems: "center",
             gap: 0.5,
-            ml: "auto",
             mt: 1,
             mr: 2,
+            justifyContent: 'space-between'
           }}
         >
-          <Typography
-            component="label"
-            htmlFor="close-icon"
-            fontSize="sm"
-            fontWeight="lg"
-            sx={{ cursor: "pointer" }}
-          >
-            Close
-          </Typography>
-          <ModalClose id="close-icon" sx={{ position: "initial" }} />
+          <Link href={"/"} className="flex items-center ml-5" onClick={() => setOpen(false)}>
+            <HomeRounded sx={{mb: 0.5}} />
+          </Link>
+          <Box sx={{display: 'flex', alignItems: 'center'}}>
+            <Typography
+              component="label"
+              htmlFor="close-icon"
+              fontSize="sm"
+              fontWeight="lg"
+              sx={{ cursor: "pointer" }}
+            >
+              Close
+            </Typography>
+            <ModalClose id="close-icon" sx={{ position: "initial" }} />
+          </Box>
         </Box>
         <Input
           size="sm"
@@ -64,6 +80,8 @@ export default function DrawerMenu() {
               "aria-label": "Search anything",
             },
           }}
+          value={formData.searchData}
+          onChange={(e) => setFormData({ searchData: e.target.value })}
           sx={{
             m: 3,
             borderRadius: 0,
@@ -97,7 +115,7 @@ export default function DrawerMenu() {
             pl: 3,
           }}
         >
-          {path.data.map((value) => (
+          {searchData.map((value) => (
             <Link
               key={value.id}
               href={value.path}

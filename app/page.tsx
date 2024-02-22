@@ -1,5 +1,7 @@
-import DrawerMenu from "@/components/Menu/DrawerMenu";
+import ThemeBox from "@/components/ThemeBox";
 
 export default function Home() {
-  return <DrawerMenu />;
+  return (
+    <ThemeBox children={undefined} />
+  );
 }
