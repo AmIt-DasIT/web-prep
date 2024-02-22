@@ -9,7 +9,11 @@
             "id": 2,
             "name": "Random Color Generator",
             "path": "random-color-generator"
+        },
+        {
+            "id": 3,
+            "name": "Star Rating",
+            "path": "star-rating"
         }
-
     ]
 }

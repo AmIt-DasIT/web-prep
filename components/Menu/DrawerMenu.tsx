@@ -10,11 +10,18 @@ import ModalClose from "@mui/joy/ModalClose";
 import Menu from "@mui/icons-material/Menu";
 import Search from "@mui/icons-material/Search";
 import path from "../../Data/path.json";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 export default function DrawerMenu() {
   const [open, setOpen] = useState(false);
+  const [title, setTitle] = useState("");
+
+  useEffect(() => {
+    const getTitle = localStorage.getItem("title");
+    if (!getTitle) return;
+    document.title = getTitle;
+  }, [title]);
 
   return (
     <>
@@ -25,7 +32,7 @@ export default function DrawerMenu() {
       >
         <Menu />
       </IconButton>
-      <Drawer open={open} onClose={() => setOpen(false)}>
+      <Drawer open={open} onClose={() => setOpen(false)} size="sm">
         <Box
           sx={{
             display: "flex",
@@ -91,7 +98,14 @@ export default function DrawerMenu() {
           }}
         >
           {path.data.map((value) => (
-            <Link key={value.id} href={value.path}>
+            <Link
+              key={value.id}
+              href={value.path}
+              onClick={() => {
+                localStorage.setItem("title", value.name);
+                setTitle(value.name);
+              }}
+            >
               {value.name}
             </Link>
           ))}
