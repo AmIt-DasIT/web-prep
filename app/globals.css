@@ -6,6 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  font-family: 'Outfite !important';
 }
 
 @media (prefers-color-scheme: dark) {
@@ -32,7 +33,6 @@ body {
   }
 }
 
-
 /* For scrollbar css */
 
 ::-webkit-scrollbar {
@@ -41,7 +41,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent; 
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -49,3 +49,4 @@ body {
   width: 2px;
   border-radius: 10px;
 }
+

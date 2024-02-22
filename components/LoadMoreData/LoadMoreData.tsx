@@ -60,9 +60,8 @@ export default function LoadMoreData() {
       {products?.length > 0 && (
         <Box
           sx={{ display: "flex", justifyContent: "center", mb: 3 }}
-          onClick={() => setCount((count) => count + 1)}
         >
-          <Button variant="outlined" loading={loading}>
+          <Button variant="outlined" loading={loading} sx={{fontFamily: 'inherit'}} onClick={() => setCount((count) => count + 1)}>
             Load More
           </Button>
         </Box>

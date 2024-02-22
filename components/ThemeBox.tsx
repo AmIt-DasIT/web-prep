@@ -1,5 +1,7 @@
+
+"use client"
 import React from "react";
-import { CssVarsProvider, CssBaseline, Stack, Divider } from "@mui/joy";
+import { CssVarsProvider, CssBaseline, Stack, Divider, extendTheme } from "@mui/joy";
 import ModeSwitcher from "./ModeToggle";
 import DrawerMenu from "./Menu/DrawerMenu";
 
@@ -9,9 +11,17 @@ type ThemeBox = {
   style?: React.CSSProperties
 };
 
+const customTheme = extendTheme({
+    fontFamily: {
+      body: '"Outfit" !important',
+      fallback: "cursive",
+    }
+})
+
+
 export default function ThemeBox({ children, className, style }: ThemeBox) {
   return (
-    <CssVarsProvider defaultMode="dark" disableTransitionOnChange>
+    <CssVarsProvider defaultMode="dark" disableTransitionOnChange theme={customTheme}>
       <CssBaseline />
       <Stack
         display={"flex"}

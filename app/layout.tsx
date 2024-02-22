@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 
-const montserrat = Outfit({subsets: ["latin"]})
+const outfit = Outfit({subsets: ["latin"]})
 
 export const metadata: Metadata = {
   title: "Web-Prep",
@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>{children}</body>
+      <body className={outfit.className}>{children}</body>
     </html>
   );
 }

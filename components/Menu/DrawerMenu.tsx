@@ -30,7 +30,7 @@ export default function DrawerMenu() {
 
   const searchData = useMemo(() => {
     return path.data.filter((data) =>
-      data.name.toLowerCase().includes(formData.searchData),
+      data.name.toLowerCase().includes(formData.searchData.toLowerCase()),
     );
   }, [formData]);
 
@@ -129,7 +129,7 @@ export default function DrawerMenu() {
                   setTitle(value.name);
                 }
               }}
-              className="text-base py-1"
+              className={`text-base py-2 pl-2 mr-5 font-medium ${typeof window !== "undefined" && localStorage.getItem("title") === value.name ? "font-[800] duration-150 text-lg" : ""}`}
             >
               {value.name}
             </Link>

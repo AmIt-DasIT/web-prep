@@ -43,7 +43,7 @@ export default function RandomColorGenerator() {
 
   return (
     <ThemeBox
-      className={`flex flex-col justify-center items-center max-h-screen min-h-[92.8vh]`}
+      className={`flex flex-col justify-center items-center max-h-screen min-h-[92.8vh] duration-700`}
       style={{ backgroundColor: color.hex }}
     >
       <div
