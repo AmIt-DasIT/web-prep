@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import colorPicker from "../../public/colorpicker.gif";
 import Image from "next/image";
 import { hexToRgb, hexToHsl } from "@/Utils/utils";
+import ThemeBox from "../ThemeBox";
 
 type DatasetType = {
   hex: string;
@@ -13,7 +14,7 @@ type DatasetType = {
 
 export default function RandomColorGenerator() {
   const [color, setColor] = useState<DatasetType>({
-    hex: "#990033",
+    hex: localStorage.getItem("joy-mode") === "light" ? "#ffffff" : "#000000",
     rgb: "255, 255, 255",
     hsl: "0, 100%, 100%",
   });
@@ -37,7 +38,7 @@ export default function RandomColorGenerator() {
   };
 
   return (
-    <div
+    <ThemeBox
       className={`flex flex-col justify-center items-center max-h-screen min-h-[92.8vh]`}
       style={{ backgroundColor: color.hex }}
     >
@@ -1011,6 +1012,6 @@ export default function RandomColorGenerator() {
           alt="#993333"
         />
       </map>
-    </div>
+    </ThemeBox>
   );
 }

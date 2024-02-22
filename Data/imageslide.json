@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "imagePath": "http://sorgalla.com/jcarousel/examples/_shared/img/img1.jpg",
+      "thumbPath": "http://sorgalla.com/jcarousel/examples/_shared/img/img1_thumb.jpg",
+      "description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum"
+    },
+    {
+      "id": 2,
+      "imagePath": "http://sorgalla.com/jcarousel/examples/_shared/img/img2.jpg",
+      "thumbPath": "http://sorgalla.com/jcarousel/examples/_shared/img/img2_thumb.jpg",
+      "description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum"
+    },
+    {
+      "id": 3,
+      "imagePath": "http://sorgalla.com/jcarousel/examples/_shared/img/img3.jpg",
+      "thumbPath": "http://sorgalla.com/jcarousel/examples/_shared/img/img3_thumb.jpg",
+      "description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum"
+    },
+    {
+      "id": 4,
+      "imagePath": "http://sorgalla.com/jcarousel/examples/_shared/img/img4.jpg",
+      "thumbPath": "http://sorgalla.com/jcarousel/examples/_shared/img/img4_thumb.jpg",
+      "description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum"
+    },
+    {
+      "id": 5,
+      "imagePath": "http://sorgalla.com/jcarousel/examples/_shared/img/img5.jpg",
+      "thumbPath": "http://sorgalla.com/jcarousel/examples/_shared/img/img5_thumb.jpg",
+      "description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum"
+    },
+    {
+      "id": 6,
+      "imagePath": "http://sorgalla.com/jcarousel/examples/_shared/img/img6.jpg",
+      "thumbPath": "http://sorgalla.com/jcarousel/examples/_shared/img/img6_thumb.jpg",
+      "description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum"
+    }
+  ]
+}

@@ -31,3 +31,21 @@ body {
     text-wrap: balance;
   }
 }
+
+
+/* For scrollbar css */
+
+::-webkit-scrollbar {
+  width: 6px !important;
+  height: 6px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9c9c9c;
+  width: 2px;
+  border-radius: 10px;
+}

@@ -14,6 +14,16 @@
             "id": 3,
             "name": "Star Rating",
             "path": "star-rating"
+        },
+        {
+            "id": 4,
+            "name": "Image Slider",
+            "path": "image-slider"
+        },
+        {
+            "id": 5,
+            "name": "Load More Data",
+            "path": "load-more-data"
         }
     ]
 }
