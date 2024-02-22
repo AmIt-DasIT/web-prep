@@ -14,7 +14,11 @@ type DatasetType = {
 
 export default function RandomColorGenerator() {
   const [color, setColor] = useState<DatasetType>({
-    hex: localStorage.getItem("joy-mode") === "light" ? "#ffffff" : "#000000",
+    hex:
+      typeof window !== "undefined" &&
+      localStorage.getItem("joy-mode") === "light"
+        ? "#ffffff"
+        : "#000000",
     rgb: "255, 255, 255",
     hsl: "0, 100%, 100%",
   });

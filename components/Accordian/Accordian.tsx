@@ -9,7 +9,7 @@ export default function Accordian() {
   const [id, setId] = useState(0);
 
   return (
-    <div className="flex w-full justify-center items-center flex-col gap-3 min-h-[92.8vh]">
+    <div className="flex w-full justify-center items-center flex-col gap-3 min-h-[92.7vh]">
       <div
         onClick={() => {
           setEnable(!enable);

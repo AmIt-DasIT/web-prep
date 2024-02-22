@@ -51,13 +51,17 @@ export default function DrawerMenu() {
             gap: 0.5,
             mt: 1,
             mr: 2,
-            justifyContent: 'space-between'
+            justifyContent: "space-between",
           }}
         >
-          <Link href={"/"} className="flex items-center ml-5" onClick={() => setOpen(false)}>
-            <HomeRounded sx={{mb: 0.5}} />
+          <Link
+            href={"/"}
+            className="flex items-center ml-5"
+            onClick={() => setOpen(false)}
+          >
+            <HomeRounded sx={{ mb: 0.5 }} />
           </Link>
-          <Box sx={{display: 'flex', alignItems: 'center'}}>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
             <Typography
               component="label"
               htmlFor="close-icon"
@@ -120,9 +124,12 @@ export default function DrawerMenu() {
               key={value.id}
               href={value.path}
               onClick={() => {
-                localStorage.setItem("title", value.name);
-                setTitle(value.name);
+                if (typeof window !== "undefined") {
+                  localStorage.setItem("title", value.name);
+                  setTitle(value.name);
+                }
               }}
+              className="text-base py-1"
             >
               {value.name}
             </Link>
