@@ -9,10 +9,10 @@ import Typography from "@mui/joy/Typography";
 import ModalClose from "@mui/joy/ModalClose";
 import Menu from "@mui/icons-material/Menu";
 import Search from "@mui/icons-material/Search";
-import path from "../../Data/path.json";
+import path from "../data/path.json";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { HomeRounded } from "@mui/icons-material";
+import { ArrowRightAltRounded, HomeRounded } from "@mui/icons-material";
 
 export default function DrawerMenu() {
   const [open, setOpen] = useState(false);
@@ -127,11 +127,18 @@ export default function DrawerMenu() {
                 if (typeof window !== "undefined") {
                   localStorage.setItem("title", value.name);
                   setTitle(value.name);
+                  setOpen(false);
                 }
               }}
-              className={`text-base py-2 pl-2 mr-5 font-medium ${typeof window !== "undefined" && localStorage.getItem("title") === value.name ? "font-[800] duration-150 text-lg" : ""}`}
+              className={`text-base flex justify-between items-center py-2 pl-2 mr-5 font-medium ${typeof window !== "undefined" && localStorage.getItem("title") === value.name ? "font-[700] duration-150 text-lg" : ""}`}
             >
               {value.name}
+              {typeof window !== "undefined" &&
+              localStorage.getItem("title") === value.name ? (
+                <ArrowRightAltRounded />
+              ) : (
+                ""
+              )}
             </Link>
           ))}
         </List>

@@ -3,8 +3,7 @@
 import React, { useState } from "react";
 import colorPicker from "../../public/colorpicker.gif";
 import Image from "next/image";
-import { hexToRgb, hexToHsl } from "@/Utils/utils";
-import ThemeBox from "../ThemeBox";
+import { hexToRgb, hexToHsl } from "@/utils/utils";
 
 type DatasetType = {
   hex: string;
@@ -42,7 +41,7 @@ export default function RandomColorGenerator() {
   };
 
   return (
-    <ThemeBox
+    <div
       className={`flex flex-col justify-center items-center max-h-screen min-h-[92.8vh] duration-700`}
       style={{ backgroundColor: color.hex }}
     >
@@ -1016,6 +1015,6 @@ export default function RandomColorGenerator() {
           alt="#993333"
         />
       </map>
-    </ThemeBox>
+    </div>
   );
 }

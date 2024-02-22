@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import accordian from "../../Data/accordian.json";
+import accordian from "../../data/accordian.json";
 import AccordianElement from "./AccordianElement";
 
 export default function Accordian() {

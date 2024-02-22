@@ -2,7 +2,7 @@
 
 import { AspectRatio, Box, Button } from "@mui/joy";
 import React, { useState } from "react";
-import imageslide from "../../Data/imageslide.json";
+import imageslide from "../../data/imageslide.json";
 import { ArrowLeft, ArrowRight } from "@mui/icons-material";
 
 export default function ImageSlider() {
@@ -19,7 +19,7 @@ export default function ImageSlider() {
       {imageslide.data.map((data) =>
         showId === data.id ? (
           <div
-            className="flex w-[90vw] h-[90vh] mx-20 justify-center items-center"
+            className="flex w-[90vw] h-[90vh] mx-20 justify-center items-center duration-700"
             key={data.id}
           >
             <Button

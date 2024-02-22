@@ -22,7 +22,10 @@ export default function AccordianElement({
   const toggleCondition = enable ? show : id === data.id;
 
   return (
-    <div className="bg-amber-100 text-amber-800 p-3 rounded-md w-[330px] transition-shadow duration-750">
+    <div
+      className="bg-amber-100 text-amber-800  p-3 rounded-md w-[330px]"
+      style={{ transition: "height", transitionDuration: "1s" }}
+    >
       <div
         onClick={() =>
           enable
@@ -34,11 +37,12 @@ export default function AccordianElement({
         <div className="text-lg">{data.title}</div>
         <div className="text-2xl">{toggleCondition ? "-" : "+"}</div>
       </div>
-      {toggleCondition && (
-        <div className="text-[#333]">
-          {data.description}
-        </div>
-      )}
+
+      <div
+        className={`text-[#333] duration-500 ease-in-out overflow-hidden ${toggleCondition ? "h-40 opacity-100" : "h-0 opacity-0"} `}
+      >
+        {toggleCondition ? data.description : ""}
+      </div>
     </div>
   );
 }

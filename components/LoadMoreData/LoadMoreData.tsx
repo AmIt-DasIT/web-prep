@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import loadmoredata from "../../Data/loadmoredata.json";
+import loadmoredata from "../../data/loadmoredata.json";
 import { Box, Button, CircularProgress } from "@mui/joy";
-import ThemeBox from "../ThemeBox";
 import DataCard from "./DataCard";
 
 type responseDataType = {
@@ -39,7 +38,7 @@ export default function LoadMoreData() {
   }, [count]);
 
   return (
-    <ThemeBox>
+    <>
       <Box
         component="ul"
         sx={{
@@ -58,14 +57,17 @@ export default function LoadMoreData() {
         )}
       </Box>
       {products?.length > 0 && (
-        <Box
-          sx={{ display: "flex", justifyContent: "center", mb: 3 }}
-        >
-          <Button variant="outlined" loading={loading} sx={{fontFamily: 'inherit'}} onClick={() => setCount((count) => count + 1)}>
+        <Box sx={{ display: "flex", justifyContent: "center", mb: 3 }}>
+          <Button
+            variant="outlined"
+            loading={loading}
+            sx={{ fontFamily: "inherit" }}
+            onClick={() => setCount((count) => count + 1)}
+          >
             Load More
           </Button>
         </Box>
       )}
-    </ThemeBox>
+    </>
   );
 }
