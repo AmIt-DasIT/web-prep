@@ -7,7 +7,7 @@ type DataCardType = {
 
 export default function DataCard({ data }: DataCardType) {
   return (
-    <Card component="li" sx={{ minWidth: 400, flexGrow: 1, minHeight: 250 }}>
+    <Card component="li" sx={{ minWidth: 300, flexGrow: 1, minHeight: 250 }}>
       <CardCover>
         <img
           src={data.thumbnail}

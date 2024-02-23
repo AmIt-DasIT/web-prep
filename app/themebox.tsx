@@ -1,14 +1,7 @@
 "use client";
-import React from "react";
-import {
-  CssVarsProvider,
-  CssBaseline,
-  Stack,
-  Divider,
-  extendTheme,
-} from "@mui/joy";
-import ModeSwitcher from "../components/ModeToggle";
-import DrawerMenu from "./drawermenu";
+import React, { useMemo } from "react";
+import { CssVarsProvider, CssBaseline, extendTheme } from "@mui/joy";
+import Header from "@/components/Header/Header";
 
 type ThemeBox = {
   children: React.ReactNode;
@@ -24,6 +17,7 @@ const customTheme = extendTheme({
 });
 
 export default function ThemeBox({ children, className, style }: ThemeBox) {
+
   return (
     <CssVarsProvider
       defaultMode="dark"
@@ -31,18 +25,9 @@ export default function ThemeBox({ children, className, style }: ThemeBox) {
       theme={customTheme}
     >
       <CssBaseline />
-      <Stack
-        display={"flex"}
-        flexDirection={"row"}
-        gap={2}
-        p={2}
-        justifyContent={"space-between"}
-        alignItems={"center"}
-      >
-        <DrawerMenu />
-        <ModeSwitcher />
-      </Stack>
-      <Divider />
+      <div className="sticky top-0 right-0 overflow-hidden">
+        <Header />
+      </div>
       <div className={className} style={style}>
         {children}
       </div>

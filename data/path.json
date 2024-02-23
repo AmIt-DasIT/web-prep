@@ -24,6 +24,11 @@
       "id": 5,
       "name": "Load More Data",
       "path": "load-more-data"
+    },
+    {
+      "id": 6,
+      "name": "Scroll Indicator",
+      "path": "scroll-indicator"
     }
   ]
 }

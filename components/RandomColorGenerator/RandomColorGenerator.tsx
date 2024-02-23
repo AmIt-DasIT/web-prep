@@ -42,7 +42,7 @@ export default function RandomColorGenerator() {
 
   return (
     <div
-      className={`flex flex-col justify-center items-center max-h-screen min-h-[92.8vh] duration-700`}
+      className={`flex flex-col justify-center items-center max-h-screen min-h-[92vh] duration-700 overflow-hidden`}
       style={{ backgroundColor: color.hex }}
     >
       <div
@@ -55,7 +55,7 @@ export default function RandomColorGenerator() {
         Color Picker
       </div>
       <div
-        className="font-extrabold p-2 m-2 rounded-lg space-x-4 flex text-lg"
+        className="font-extrabold p-2 m-2 rounded-lg sm:space-x-4 flex text-lg flex-col sm:flex-row"
         style={{ backgroundColor: `rgba(${color.hex}, 0.05)` }}
       >
         <div

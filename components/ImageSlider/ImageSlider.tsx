@@ -19,13 +19,14 @@ export default function ImageSlider() {
       {imageslide.data.map((data) =>
         showId === data.id ? (
           <div
-            className="flex w-[90vw] h-[90vh] mx-20 justify-center items-center duration-700"
+            className="flex w-screen sm:w-[90vw] sm:h-[90vh] sm:mx-20 justify-center items-center duration-700"
             key={data.id}
           >
             <Button
               variant="outlined"
               color="neutral"
               sx={{ height: "55px", borderRadius: "100%" }}
+              className="absolute sm:relative left-3"
               onClick={() =>
                 setShowId(showId > 1 ? data.id - 1 : imageslide.data.length)
               }
@@ -36,11 +37,12 @@ export default function ImageSlider() {
               src={data.imagePath}
               alt={""}
               loading="lazy"
-              className="mx-32 w-[70vw] h-[80vh] rounded-3xl shadow-2xl"
+              className="sm:mx-32 w-[90vw] sm:w-[70vw] h-[80vh] rounded-3xl shadow-2xl"
             />
             <Button
               variant="outlined"
               color="neutral"
+              className="absolute sm:relative right-3"
               sx={{ height: "55px", borderRadius: "100%" }}
               onClick={() =>
                 setShowId(showId < imageslide.data.length ? data.id + 1 : 1)

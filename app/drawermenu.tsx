@@ -12,7 +12,7 @@ import Search from "@mui/icons-material/Search";
 import path from "../data/path.json";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowRightAltRounded, HomeRounded } from "@mui/icons-material";
+import { ArrowRightAltRounded } from "@mui/icons-material";
 
 export default function DrawerMenu() {
   const [open, setOpen] = useState(false);
@@ -34,8 +34,13 @@ export default function DrawerMenu() {
     );
   }, [formData]);
 
+  useEffect(() => {
+    typeof window !== "undefined" && window.location.pathname === "/" && localStorage.setItem("title", "");
+  }, [])
+  
+
   return (
-    <>
+    <Box display={{sm: 'flex', md: 'none'}}>
       <IconButton
         variant="outlined"
         color="neutral"
@@ -49,17 +54,20 @@ export default function DrawerMenu() {
             display: "flex",
             alignItems: "center",
             gap: 0.5,
-            mt: 1,
+            mt: 2,
             mr: 2,
             justifyContent: "space-between",
           }}
         >
           <Link
             href={"/"}
-            className="flex items-center ml-5"
-            onClick={() => setOpen(false)}
+            className="flex items-center ml-6 text-2xl font-bold"
+            onClick={() => {
+              setOpen(false);
+              localStorage.setItem("title", "");
+            }}
           >
-            <HomeRounded sx={{ mb: 0.5 }} />
+            Web-Prep
           </Link>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <Typography
@@ -67,7 +75,7 @@ export default function DrawerMenu() {
               htmlFor="close-icon"
               fontSize="sm"
               fontWeight="lg"
-              sx={{ cursor: "pointer" }}
+              sx={{ cursor: "pointer", pr: 0.5 }}
             >
               Close
             </Typography>
@@ -130,7 +138,7 @@ export default function DrawerMenu() {
                   setOpen(false);
                 }
               }}
-              className={`text-base flex justify-between items-center py-2 pl-2 mr-5 font-medium ${typeof window !== "undefined" && localStorage.getItem("title") === value.name ? "font-[700] duration-150 text-lg" : ""}`}
+              className={`text-base flex justify-between items-center py-2 pl-2 mr-5 font-medium ${typeof window !== "undefined" && localStorage.getItem("title") === value.name ? "font-[700] duration-150 text-lg underline" : ""}`}
             >
               {value.name}
               {typeof window !== "undefined" &&
@@ -143,6 +151,6 @@ export default function DrawerMenu() {
           ))}
         </List>
       </Drawer>
-    </>
+    </Box>
   );
 }
