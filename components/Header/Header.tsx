@@ -12,6 +12,7 @@ export default function Header() {
         flexDirection={"row"}
         gap={2}
         p={2}
+        px={4}
         justifyContent={"space-between"}
         alignItems={"center"}
       >

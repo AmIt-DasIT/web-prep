@@ -25,7 +25,7 @@ export default function ThemeBox({ children, className, style }: ThemeBox) {
       theme={customTheme}
     >
       <CssBaseline />
-      <div className="sticky top-0 right-0 overflow-hidden">
+      <div className="sticky top-0 right-0 overflow-hidden z-50 backdrop-blur">
         <Header />
       </div>
       <div className={className} style={style}>

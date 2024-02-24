@@ -29,6 +29,11 @@
       "id": 6,
       "name": "Scroll Indicator",
       "path": "scroll-indicator"
+    },
+    {
+      "id": 6,
+      "name": "Meals",
+      "path": "meals"
     }
   ]
 }
