@@ -1,6 +1,6 @@
 "use client";
 import React, { useMemo } from "react";
-import { CssVarsProvider, CssBaseline, extendTheme } from "@mui/joy";
+import { CssVarsProvider, CssBaseline, extendTheme, getInitColorSchemeScript } from "@mui/joy";
 import Header from "@/components/Header/Header";
 
 type ThemeBox = {
@@ -24,6 +24,7 @@ export default function ThemeBox({ children, className, style }: ThemeBox) {
       disableTransitionOnChange
       theme={customTheme}
     >
+      {getInitColorSchemeScript()}
       <CssBaseline />
       <div className="sticky top-0 right-0 overflow-hidden z-50 backdrop-blur">
         <Header />

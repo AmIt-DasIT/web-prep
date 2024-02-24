@@ -3,7 +3,6 @@
 import { Box, Button, Input, Stack } from "@mui/joy";
 import React, { useEffect, useState } from "react";
 import MealCard from "./MealCard";
-import CountrySelect from "../Common/CountrySelect";
 import { SearchRounded } from "@mui/icons-material";
 import { Error } from "../Error/Error";
 
@@ -35,16 +34,16 @@ export default function MealContainer() {
   }, [search]);
 
   return (
-    <Box sx={{ p: 4 }}>
+    <Box p={2}>
       <Stack
         direction={{ sm: "column", md: "row" }}
         justifyContent={"center"}
         spacing={2}
         mb={2}
       >
-        {/* <CountrySelect setSearch={setSearch} /> */}
         <Input
-          sx={{ width: "50%", height: 37, borderRadius: 30 }}
+          sx={{ height: 37, borderRadius: 30 }}
+          className="w-[100%] sm:w-[50%]"
           startDecorator={<SearchRounded />}
           endDecorator={
             <Button

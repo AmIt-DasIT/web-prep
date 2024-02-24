@@ -19,18 +19,10 @@ export default function MealCard({ products }: MealCardType) {
   return (
     <Box
       component="ul"
-      sx={{
-        display: "grid",
-        gap: 2,
-        p: 2,
-        m: 0,
-        gridTemplateColumns: "repeat(5, minmax(0, 1fr))",
-        border: "1px solid #444",
-        position: "relative",
-      }}
+      className="grid grid-cols-1 sm:grid-cols-5 rounded-lg border border-gray-600 relative p-2 gap-2"
     >
       {products.slice(0, showData).map((data) => (
-        <Link href={`meals/${data.idMeal}`}>
+        <Link href={`meals/${data.idMeal}`} key={data.idMeal}>
           <Card
             component="li"
             sx={{ minWidth: 300, flexGrow: 1 }}
