@@ -1,6 +1,11 @@
 "use client";
 import React, { useMemo } from "react";
-import { CssVarsProvider, CssBaseline, extendTheme, getInitColorSchemeScript } from "@mui/joy";
+import {
+  CssVarsProvider,
+  CssBaseline,
+  extendTheme,
+  getInitColorSchemeScript,
+} from "@mui/joy";
 import Header from "@/components/Header/Header";
 
 type ThemeBox = {
@@ -17,7 +22,6 @@ const customTheme = extendTheme({
 });
 
 export default function ThemeBox({ children, className, style }: ThemeBox) {
-
   return (
     <CssVarsProvider
       defaultMode="dark"

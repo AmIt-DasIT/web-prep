@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import ThemeBox from "./themebox";
+// import Cookies from "./cookies";
+import dynamic from 'next/dynamic'
+ 
+const Cookies = dynamic(() => import('./cookies'), { ssr: false })
 
 const outfit = Outfit({ subsets: ["latin"] });
 
@@ -18,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={outfit.className}>
+        <Cookies />
         <ThemeBox>{children}</ThemeBox>
       </body>
     </html>

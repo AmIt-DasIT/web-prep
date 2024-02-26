@@ -72,14 +72,14 @@ export default function MainDashboard() {
         sx={{ flexWrap: "wrap", gap: 2, px: 1, pt: 4 }}
       >
         {searchData.map((data) => (
-          <Link href={data.path} className="flex-grow" onClick={() => {
+          <Link href={data.path} className="flex-grow" key={data.id} onClick={() => {
             if (typeof window !== "undefined") {
               localStorage.setItem("title", data.name);
               setTitle(data.name);
             }
           }}>
             <Card
-              key={data.id}
+              
               variant="soft"
               sx={{
                 minWidth: 340,

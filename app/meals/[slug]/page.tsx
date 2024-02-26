@@ -55,14 +55,6 @@ export default function Page({ params }: { params: { slug: string } }) {
             }}
             height={300}
           ></Box>
-          {console.log(
-            nationalities.filter(
-              (data) =>
-                data.label.toLowerCase() ===
-                productDetails.strArea.toLowerCase(),
-            ),
-          )}
-
           <Box
             sx={{
               display: "flex",
@@ -93,7 +85,14 @@ export default function Page({ params }: { params: { slug: string } }) {
               {productDetails.strTags}
             </Chip>
           </Box>
-          <Box>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "flex-start",
+              flexDirection: "column",
+              width: "100%",
+            }}
+          >
             <Typography fontFamily={"inherit"} level="title-lg">
               Ingredients
             </Typography>
@@ -107,7 +106,7 @@ export default function Page({ params }: { params: { slug: string } }) {
               {Array.from({ length: 20 }).map((value, index) => (
                 <>
                   {productDetails[`strIngredient${index + 1}`]?.length !== 0 ? (
-                    <Chip color="warning" size="lg">
+                    <Chip color="warning" size="lg" key={index}>
                       {productDetails[`strIngredient${index + 1}`]}
                     </Chip>
                   ) : (
